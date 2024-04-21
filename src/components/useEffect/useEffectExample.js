@@ -10,7 +10,6 @@ function UseEffectExample() {
             }
         })
             .then((res) => {
-                console.log(res)
                 setData(res.data)
             })
     }, [])
