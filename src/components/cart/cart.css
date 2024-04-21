@@ -1,0 +1,33 @@
+.item{
+    display: flex;
+    box-shadow: 0 0 5px #999;
+    margin: 10px;
+    align-items: center;
+    gap: 10px;
+}
+.item button{
+    padding: 5px;
+    background-color:lightblue ;
+    border: none;
+    width: 80px;
+
+}
+.item p {
+    text-align: center;
+    flex-grow: 1;
+    font-size: 20px;
+}
+.item p::before{
+    content: '₹';
+} 
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: beige;
+    margin: 0;
+    text-align: right;
+}
+.item div{
+    display: flex;
+}

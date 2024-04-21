@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/card/card"
+import './App.css'
+import StateExample from "./components/state/state"
+import Cart from "./components/cart/cart"
+import UseEffectExample from "./components/useEffect/useEffectExample"
+import Demo from "./components/classComponent/demo"
+import Home from "./components/pages/home"
+import Contact from "./components/pages/contact"
+import About from "./components/pages/about"
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
+import SingleUser from "./components/pages/singleUser"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  // <StateExample/> <Cart /> <UseEffectExample /> <Demo title='User'/>
+  return <>
+  <BrowserRouter>
+    <div>
+      <Link to='/'>Home</Link>
+      <Link to='/about'>About</Link>
+      <Link to='/contact'>Contact</Link>
     </div>
-  );
+    <Routes>
+      <Route path="/" element={<UseEffectExample />}/>
+      <Route path="/about" element={<About />}/>
+      <Route path="/contact" element={<Contact />}/>
+      <Route path="/user/:id" element={<SingleUser />}/>
+    </Routes>
+  </BrowserRouter>
+  </>
 }
-
-export default App;
+export default App 
